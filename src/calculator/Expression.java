@@ -14,7 +14,16 @@ public class Expression extends ArithmParser{
 	}
 	//	
 	
-	public double result() throws ArrayIndexOutOfBoundsException, IllegalArgumentException{
+	public double result() throws ArrayIndexOutOfBoundsException, IllegalArgumentException {
+		double res = doResult();
+		if(!isIndexBigger()){
+			throw new IllegalArgumentException();
+		}
+		//
+		return(res);
+	}
+	
+	double doResult() {
 		double res=Term();
 		//		
 		while(getExpression().length()>getIndex() && isOperation1(flowChar())){
@@ -71,7 +80,7 @@ public class Expression extends ArithmParser{
 			else
 				if(isLeftBrace(flowChar())){
 					nextIdx();
-					res = result();
+					res = doResult();
 					if( isIndexBigger() )
 						throw new IllegalArgumentException();
 					if(!isRightBrace(flowChar()))
@@ -93,7 +102,7 @@ public class Expression extends ArithmParser{
 		else{
 			if(isLeftBrace(flowChar())){
 				nextIdx();
-				res = result();
+				res = doResult();
 				if(isIndexBigger() )
 					throw new IllegalArgumentException();
 				if(!isRightBrace(flowChar()))

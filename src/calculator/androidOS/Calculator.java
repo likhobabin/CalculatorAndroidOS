@@ -70,20 +70,20 @@ public class Calculator extends Activity {
 								.setText(String.valueOf(FEvaluting.result()));
 					} catch (IllegalArgumentException ex) {
 						Log.d("IllegalArgumentException",
-								"Incorrect expression", ex);
+								"Incorrect the expression", ex);
 						bClean = true;
-						expr_editor.setText("Incorrect expression");
+						expr_editor.setText("Incorrect the expression");
 						expr_editor.setEnabled(false);
 					} catch (NullPointerException ex) {
 						Log.d("NullPointerException",
-								"Incorrect expression", ex);
+								"Incorrect the expression", ex);
 						bClean = true;
-						expr_editor.setText("Incorrect Expression");
+						expr_editor.setText("Incorrect the expression");
 						expr_editor.setEnabled(false);
 					} catch (Exception ex) {
-						Log.d("Exception", "Incorrect Expression", ex);
+						Log.d("Exception", "Incorrect the expression", ex);
 						bClean = true;
-						expr_editor.setText("Incorrect expression");
+						expr_editor.setText("Incorrect the expression");
 						expr_editor.setEnabled(false);
 					}
 					//

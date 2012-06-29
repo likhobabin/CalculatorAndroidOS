@@ -28,7 +28,8 @@ public abstract class ArithmParser {
 		return(FIdx);
 	}
 	
-	abstract public double result() throws IndexOutOfBoundsException, IllegalArgumentException ;
+	public abstract  double result() throws IndexOutOfBoundsException, IllegalArgumentException ;
+	abstract  double doResult();
 	//
 	
 	char flowChar(){
